@@ -50,18 +50,15 @@ local plugins = {
 
   ["simrat39/rust-tools.nvim"] = {
     after = "nvim-lspconfig",
-  },
-
-  ["rust-lang/rust.vim"] = {
     config = function()
-      require("rust").setup()
+      require "custom.plugins.rust-tool"
     end,
   },
 
   ["lewis6991/gitsigns.nvim"] = {
-    -- config = function()
-    --   require("gitsigns").setup()
-    -- end,
+    config = function()
+      require("gitsigns").setup()
+    end,
   },
   --
   -- remove plugin
