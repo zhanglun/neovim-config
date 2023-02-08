@@ -3,8 +3,6 @@ local overrides = require "custom.plugins.overrides"
 ---@type {[PluginName]: NvPluginConfig|false}
 local plugins = {
 
-  -- ["goolord/alpha-nvim"] = { disable = false } -- enables dashboard
-
   -- Override plugin definition options
   ["neovim/nvim-lspconfig"] = {
     config = function()
@@ -42,6 +40,30 @@ local plugins = {
     end,
   },
 
+  ["goolord/alpha-nvim"] = {
+    disable = false,
+    config = function()
+      require "plugins.configs.alpha"
+      -- require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end,
+  },
+
+  ["simrat39/rust-tools.nvim"] = {
+    after = "nvim-lspconfig",
+  },
+
+  ["rust-lang/rust.vim"] = {
+    config = function()
+      require("rust").setup()
+    end,
+  },
+
+  ["lewis6991/gitsigns.nvim"] = {
+    -- config = function()
+    --   require("gitsigns").setup()
+    -- end,
+  },
+  --
   -- remove plugin
   -- ["hrsh7th/cmp-path"] = false,
 }

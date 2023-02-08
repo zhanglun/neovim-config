@@ -4,25 +4,47 @@ if not present then
   return
 end
 
-local b = null_ls.builtins
+-- code action sources
+local code_actions = null_ls.builtins.code_actions
+
+-- diagnostic sources
+local diagnostics = null_ls.builtins.diagnostics
+
+-- formatting sources
+local formatting = null_ls.builtins.formatting
+
+-- hover sources
+local hover = null_ls.builtins.hover
+
+-- completion sources
+local completion = null_ls.builtins.completion
 
 local sources = {
 
-  -- webdev stuff
-  b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
-  b.formatting.prettier.with { filetypes = { "html", "markdown", "css" } }, -- so prettier works only on these filetypes
-
-  -- Lua
-  b.formatting.stylua,
-
   -- cpp
-  b.formatting.clang_format,
+  formatting.clang_format,
 
   -- rust
-  b.formatting.rustfmt,
-  b.diagnostics.eslint,
-  b.completion.spell,
+  formatting.rustfmt,
 
+  -- Lua
+  formatting.stylua,
+
+  formatting.prettier,
+
+  diagnostics.eslint,
+  diagnostics.write_good,
+  diagnostics.cspell,
+
+  completion.spell,
+
+  code_actions.eslint,
+
+  code_actions.eslint_d,
+
+  code_actions.gitsigns,
+
+  code_actions.cspell,
 }
 
 null_ls.setup {
