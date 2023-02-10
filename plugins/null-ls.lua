@@ -30,21 +30,25 @@ local sources = {
   -- Lua
   formatting.stylua,
 
-  formatting.prettier,
+  -- formatting.prettier,
+  --
+  --
+  -- diagnostics.eslint,
+  --
+  -- diagnostics.write_good,
 
-  diagnostics.eslint,
-  diagnostics.write_good,
-  diagnostics.cspell,
+  -- diagnostics.cspell,
+  --
+  -- completion.spell,
+  --
+  -- code_actions.eslint,
+  --
+  -- code_actions.eslint_d,
+  --
+  -- code_actions.gitsigns,
 
-  completion.spell,
+  -- code_actions.rustywind,
 
-  code_actions.eslint,
-
-  code_actions.eslint_d,
-
-  code_actions.gitsigns,
-
-  code_actions.cspell,
 }
 
 null_ls.setup {

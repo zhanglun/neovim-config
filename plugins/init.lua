@@ -50,17 +50,11 @@ local plugins = {
 
   ["simrat39/rust-tools.nvim"] = {
     after = "nvim-lspconfig",
-    config = function()
-      require "custom.plugins.rust-tool"
-    end,
   },
 
   ["lewis6991/gitsigns.nvim"] = {
-    config = function()
-      require("gitsigns").setup()
-    end,
   },
-  --
+
   -- remove plugin
   -- ["hrsh7th/cmp-path"] = false,
 }
