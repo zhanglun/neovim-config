@@ -52,7 +52,10 @@ local plugins = {
     after = "nvim-lspconfig",
   },
 
-  ["lewis6991/gitsigns.nvim"] = {
+  ["lewis6991/gitsigns.nvim"] = {},
+
+  ["folke/tokyonight.nvim"] = {
+    style = "strom",
   },
 
   -- remove plugin
