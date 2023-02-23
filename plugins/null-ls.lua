@@ -13,9 +13,6 @@ local diagnostics = null_ls.builtins.diagnostics
 -- formatting sources
 local formatting = null_ls.builtins.formatting
 
--- hover sources
-local hover = null_ls.builtins.hover
-
 -- completion sources
 local completion = null_ls.builtins.completion
 
@@ -31,8 +28,11 @@ local sources = {
   formatting.stylua,
 
   formatting.prettier,
-  --
-  diagnostics.eslint,
+
+  formatting.rome,
+
+  formatting.rustywind,
+
   --
   diagnostics.write_good,
 
@@ -40,13 +40,10 @@ local sources = {
   --
   completion.spell,
   --
-  code_actions.eslint,
-  --
   code_actions.eslint_d,
   --
   code_actions.gitsigns,
 
-  code_actions.rustywind,
 }
 
 null_ls.setup {
